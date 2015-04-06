@@ -1,0 +1,19 @@
+Hortonworks ODBC driver installed and configured
+Hortonworks Sandbox 1.3 (installed and running)
+port 22
+wget http://apache.spinellicreations.com/spark/spark-1.3.0/spark-1.3.0.tgz
+tar xvfz spark-1.3.0.tgz
+sbt/sbt assembly
+/root/<SPARK_HOME>/sbin/start-master.sh 
+./bin/spark-class org.apache.spark.deploy.worker.Worker spark://IP:PORT
+https://s3.amazonaws.com/hw-sandbox/tutorial8/RefineDemoData.zip
+create tables in the webinterface
+hadoop fs -mkdir
+hadoop fs -ls etc
+Programming concepts
+$ ls wc/
+_SUCCESS   part-00000 part-00001
+$ head wc/part-00000
+mllib examples:
+	kmeans
+		./bin/spark-submit ./examples/src/main/python/mllib/kmeans.py data/mllib/kmeans_data.txt 2
